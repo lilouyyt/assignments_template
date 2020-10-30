@@ -10,6 +10,11 @@ import (
 // You should only output to `out` once.
 // Do NOT modify function signature.
 func sumWorker(nums chan int, out chan int) {
+	ch1:= make(chan int)
+//ch2 := make(chan int)
+for ch2:= range ch1{
+         ch2=ch1+ch2
+     }
 	// TODO: implement me
 	// HINT: use for loop over `nums`
 }
