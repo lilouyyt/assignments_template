@@ -10,6 +10,12 @@ import (
 // You should only output to `out` once.
 // Do NOT modify function signature.
 func sumWorker(nums chan int, out chan int) {
+	ch1:= make(chan int)
+//ch2 := make(chan int)
+        for ch2:= range ch1{
+         ch2=ch1+ch2
+        }
+	return ch2
 	// TODO: implement me
 	// HINT: use for loop over `nums`
 }
@@ -20,10 +26,12 @@ func sumWorker(nums chan int, out chan int) {
 // You should use `checkError` to handle potential errors.
 // Do NOT modify function signature.
 func sum(num int, fileName string) int {
+	n:=readInts(string)
+	result:=sumWorker(num,n)
 	// TODO: implement me
 	// HINT: use `readInts` and `sumWorkers`
 	// HINT: used buffered channels for splitting numbers between workers
-	return 0
+	return result
 }
 
 // Read a list of integers separated by whitespace from `r`.
